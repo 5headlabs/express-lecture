@@ -20,5 +20,11 @@ exports.getAppleDetails = function(req, res) {
 }
 
 exports.createApple = function(req, res) {
-    
+    let apple = new Apple({
+        name: "AppleCopy",
+        type: "AwesomeApple"
+    });
+
+    // Save pear object on the database
+    apple.save();
 }

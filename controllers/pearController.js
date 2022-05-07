@@ -20,5 +20,11 @@ exports.getPearDetails = function(req, res) {
 }
 
 exports.createPear = function(req, res) {
-    
+    let pear = new Pear({
+        name: "PearCopy",
+        type: "AwesomePear"
+    });
+
+    // Save pear object on the database
+    pear.save();
 }
