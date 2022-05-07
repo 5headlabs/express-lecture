@@ -4,17 +4,17 @@ const express = require("express");
 const router = express.Router();
 
 //import controllers
-const fruit_Controller = require("../controllers/fruitController");
-const apple_Controller = require("../controllers/appleController");
-const pear_Controller  = require("../controllers/pearController");
-const log_Controller   = require("../controllers/logController");
+const fruitController = require("../controllers/fruitController");
+const appleController = require("../controllers/appleController");
+const pearController  = require("../controllers/pearController");
+const logController   = require("../controllers/logController");
 
 //forward requests to controllers
-router.get("/"              , log_Controller.logActivity, fruit_Controller.listFruits);
-router.post("/apple/create" , apple_Controller.createApple);
-router.get("/apple/:appleID", apple_Controller.getAppleDetails);
-router.post("/pear/create"  , pear_Controller.createPear);
-router.get("/pear/:pearID"  , pear_Controller.getPearDetails);
+router.get("/"              , logController.logActivity, fruitController.listFruits);
+router.post("/apple/create" , appleController.createApple);
+router.get("/apple/:appleID", appleController.getAppleDetails);
+router.post("/pear/create"  , pearController.createPear);
+router.get("/pear/:pearID"  , pearController.getPearDetails);
 
 //export router
 module.exports = router;
