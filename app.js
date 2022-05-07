@@ -17,4 +17,9 @@ app.get('/', function(req, res) {
 //forward request to fruit router
 app.use('/fruits', router);
 
+//handling 404 error
+app.use('*', function(req, res) {
+  res.redirect("/");
+});
+
 module.exports = app;
