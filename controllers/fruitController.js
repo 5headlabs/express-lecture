@@ -1,5 +1,15 @@
+const Apple = require("../models/apple");
+const Pear = require("../models/pear");
+
 exports.listFruits = (req, res) => {
-    res.render('fruits', {
-        fruits: [] // TODO: pass all fruit data as an array of objects into the view
+    let fruits = [];
+    Apple.find((err, result) => {
+        fruits = fruits.concat(result);
+        Pear.find((err, result) => {
+            fruits = fruits.concat(result);
+            res.render('fruits', {
+                fruits
+            });
+        });
     });
 }
