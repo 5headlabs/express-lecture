@@ -4,21 +4,6 @@ const dbname = "FruitsDB";
 const user = "fruitlover";
 const pwd = "irwsjSFYgQnEdpPN";
 
-/* SCHEMAS */
-
-const AppleSchema = new mongoose.Schema({
-    type: String
-});
-
-const PearSchema = new mongoose.Schema({
-    type: String
-});
-
-/* MODELS */
-
-const AppleModel = mongoose.model('Apples', PuppySchema);
-const PearModel = mongoose.model('Pears', PuppySchema);
-
 function connectToDB(){
     mongoose
     .connect("mongodb+srv://" + user + ":" + pwd + "@cluster0.sextv.mongodb.net/" + dbname + "?retryWrites=true&w=majority")
@@ -30,6 +15,8 @@ function connectToDB(){
         //AddPear();
     })
     .catch (console.error);
+
+    mongoose.Promise = global.Promise;
 }
 
 function createAple(){

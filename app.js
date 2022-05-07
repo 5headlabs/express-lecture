@@ -1,7 +1,14 @@
 //import express
 const express = require('express');
+
+//get the connection script
+const connection = require("./models/connection");
+
 //create express instance
 const app = express();
+
+//connect to the database
+connection.connectToDB();
 
 //import router
 const router = require('./routes/fruits');
