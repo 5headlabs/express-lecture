@@ -5,7 +5,7 @@ const Apple = require("../models/apple");
 exports.getAppleDetails = function(req, res) {
     // get the apple id from the URL parameter list
     let appleID = req.params.appleID;
-    // TODO: get apple object from model by ID
+    // get apple object
     Apple.findById(appleID,
         (err, result) => {
             if (err) {
@@ -13,7 +13,7 @@ exports.getAppleDetails = function(req, res) {
             } else {
                 console.log(result);
                 res.render('fruit', {
-                    fruit: result // TODO: pass apple data as object into the view
+                    fruit: result
                 });
             }
         });

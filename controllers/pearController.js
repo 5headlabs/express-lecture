@@ -5,7 +5,7 @@ const Pear = require("../models/pear");
 exports.getPearDetails = function(req, res) {
     // get the apple id from the URL parameter list
     let pearID = req.params.pearID;
-    // TODO: get pear object from model by ID
+    // get pear object
     Pear.findById(pearID,
         (err, result) => {
             if (err) {
@@ -13,7 +13,7 @@ exports.getPearDetails = function(req, res) {
             } else {
                 console.log(result);
                 res.render('fruit', {
-                    fruit: result // TODO: pass pear data as object into the view
+                    fruit: result
                 });
             }
         });
