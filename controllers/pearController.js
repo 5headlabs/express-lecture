@@ -1,3 +1,4 @@
+//import pear model
 const Pear = require("../models/pear");
 
 // controller handler function for pear details
