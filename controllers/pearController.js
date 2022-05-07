@@ -12,7 +12,7 @@ exports.getPearDetails = function(req, res) {
             } else {
                 console.log(result);
                 res.render('fruit', {
-                    fruit: {result} // TODO: pass pear data as object into the view
+                    fruit: result // TODO: pass pear data as object into the view
                 });
             }
         });
