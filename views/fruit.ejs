@@ -5,14 +5,27 @@
         <meta charset="UTF-8">
     </head>
 
+    <style>
+        .app {
+        border: 1px solid black; 
+        padding: 5;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+    </style>
+
     <body>
-        <p>Fruit Creation Date &emsp;:&emsp;<%= fruit.creationDate %></p>
-        <p>Fruit Type &emsp;:&emsp;<%= fruit.type %></p>
-        <p>Fruit Kind &emsp;:&emsp;<%= fruit.kind %></p>
-        <p>Fruit Origin &emsp;:&emsp;<%= fruit.origin %></p>
-        <form action="<%= back_url%>" method="get">
-            <button type="submit">Go Back</button>
-        </form>
+        <div class="app">
+            <p>Fruit Creation Date &emsp;:&emsp;<%= fruit.creationDate %></p>
+            <p>Fruit Type &emsp;:&emsp;<%= fruit.type %></p>
+            <p>Fruit Kind &emsp;:&emsp;<%= fruit.kind %></p>
+            <p>Fruit Origin &emsp;:&emsp;<%= fruit.origin %></p>
+            <form action="<%= back_url%>" method="get">
+                <button type="submit">Go Back</button>
+            </form>
+        </div>
     </body>
 
 </html>
