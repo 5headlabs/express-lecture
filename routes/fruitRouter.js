@@ -7,7 +7,7 @@ const router = express.Router();
 const fruitController = require("../controllers/fruitController");
 const logController   = require("../controllers/logController");
 
-
+//using a body parser for form parsing
 const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: true }));
 

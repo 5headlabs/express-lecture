@@ -11,7 +11,7 @@
                 <a href="/fruits/fruit/<%= fruit._id%>"> <%= fruit.type %> - <%= fruit.kind %></a>
             </div>
         <% }); %>
-        <form action="/fruits/fruit/create" method="post">
+        <form action="<%= creation_url%>" method="post">
             <label for="fruit type">Fruit Type:</label><br>
             <input type="text" id="fruit type" name="type"><br>
             <label for="fruit kind">Fruit Kind:</label><br>

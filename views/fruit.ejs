@@ -6,10 +6,13 @@
     </head>
 
     <body>
-        <p><%= fruit.creationDate %></p>
-        <p><%= fruit.type %></p>
-        <p><%= fruit.kind %></p>
-        <p><%= fruit.origin %></p>
+        <p>Fruit Creation Date &emsp;:&emsp;<%= fruit.creationDate %></p>
+        <p>Fruit Type &emsp;:&emsp;<%= fruit.type %></p>
+        <p>Fruit Kind &emsp;:&emsp;<%= fruit.kind %></p>
+        <p>Fruit Origin &emsp;:&emsp;<%= fruit.origin %></p>
+        <form action="<%= back_url%>" method="get">
+            <button type="submit">Go Back</button>
+        </form>
     </body>
 
 </html>

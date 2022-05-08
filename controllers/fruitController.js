@@ -3,7 +3,8 @@ const Fruit = require("../models/fruit");
 exports.listFruits = (req, res) => {
     Fruit.find((err, result) => {
         res.render('fruits', {
-            fruits: result
+            fruits: result,
+            creation_url: '/fruits/fruit/create'
         });
     });
 }
@@ -20,7 +21,8 @@ exports.getFruitDetails = function(req, res) {
             } else {
                 console.log(result);
                 res.render('fruit', {
-                    fruit: result
+                    fruit: result,
+                    back_url: "/fruits"
                 });
             }
         });
