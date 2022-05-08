@@ -5,16 +5,16 @@ const router = express.Router();
 
 //import controllers
 const fruitController = require("../controllers/fruitController");
-const appleController = require("../controllers/appleController");
-const pearController  = require("../controllers/pearController");
 const logController   = require("../controllers/logController");
+
+
+const bodyParser = require('body-parser');
+router.use(bodyParser.urlencoded({ extended: true }));
 
 //forward requests to controllers
 router.get("/"              , logController.logActivity, fruitController.listFruits);
-router.post("/apple/create" , appleController.createApple);
-router.get("/apple/:appleID", appleController.getAppleDetails);
-router.post("/pear/create"  , pearController.createPear);
-router.get("/pear/:pearID"  , pearController.getPearDetails);
+router.post("/fruit/create" , fruitController.createFruit);
+router.get("/fruit/:fruitID", fruitController.getFruitDetails);
 
 //export router
 module.exports = router;

@@ -4,6 +4,8 @@ const express = require('express');
 //get the connection script
 const connection = require("./models/connection");
 
+
+
 //create express instance
 const app = express();
 
@@ -11,7 +13,7 @@ const app = express();
 connection.connectToDB();
 
 //import router
-const router = require('./routes/fruits');
+const router = require('./routes/fruitRouter');
 
 //set ejs as view engine
 app.set('view engine', 'ejs');

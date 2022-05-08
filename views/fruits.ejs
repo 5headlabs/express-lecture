@@ -8,10 +8,18 @@
     <body>
         <% fruits.forEach(fruit => { %>
             <div>
-                <p><%= fruit.name %></p>
-                <p><%= fruit.type %></p>
+                <a href="/fruits/fruit/<%= fruit._id%>"> <%= fruit.type %> - <%= fruit.kind %></a>
             </div>
         <% }); %>
+        <form action="/fruits/fruit/create" method="post">
+            <label for="fruit type">Fruit Type:</label><br>
+            <input type="text" id="fruit type" name="type"><br>
+            <label for="fruit kind">Fruit Kind:</label><br>
+            <input type="text" id="fruit kind" name="kind"><br>
+            <label for="fruit origin">Fruit Origin:</label><br>
+            <input type="text" id="fruit origin" name="origin"><br>
+            <input type="submit" value="Create Fruit">
+          </form>
     </body>
 
 </html>
