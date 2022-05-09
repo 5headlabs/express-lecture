@@ -12,9 +12,9 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: true }));
 
 //forward requests to controllers
-router.get("/"              , logController.logActivity, fruitController.listFruits);
+router.get("/"              , fruitController.listFruits);
 router.post("/fruit/create" , fruitController.createFruit);
-router.get("/fruit/:fruitID", fruitController.getFruitDetails);
+router.get("/fruit/:fruitID", logController.logActivity, fruitController.getFruitDetails);
 
 //export router
 module.exports = router;

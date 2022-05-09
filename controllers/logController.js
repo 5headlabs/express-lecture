@@ -1,6 +1,6 @@
 exports.logActivity = (req, res, next) => {
     // Print activity log to console
-    console.log(`'${req.ip}' is visiting ${req.url}`);
+    console.log(`Retrieving info for item '${req.params.fruitID}'`);
 
     // Call next function in middleware stack
     next();
