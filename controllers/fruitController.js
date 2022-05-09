@@ -1,4 +1,4 @@
-const Fruit = require("../models/fruit");
+const Fruit = require("../models/fruitModel");
 
 exports.listFruits = (req, res) => {
     Fruit.find((err, result) => {
