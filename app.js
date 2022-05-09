@@ -1,5 +1,6 @@
 //import express
 const express = require('express');
+const res = require('express/lib/response');
 
 //get the connection script
 const connection = require("./models/connection");
@@ -29,6 +30,12 @@ app.use('/fruits', router);
 //handling 404 error
 app.use('*', function(req, res) {
   res.redirect("/");
+});
+
+//handling any other error
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send("Error 500 - Something broke!");
 });
 
 module.exports = app;
