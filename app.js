@@ -1,10 +1,8 @@
 // Import express
 const express = require('express');
-const res = require('express/lib/response');
 
 // Get the connection script
 const connection = require("./models/connection");
-
 
 
 // Create express instance
