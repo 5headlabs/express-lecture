@@ -37,7 +37,7 @@ exports.createFruit = function(req, res) {
         origin: req.body.origin
     });
 
-    // Save pear object on the database
+    // Save fruit object on the database
     fruit.save();
 
     res.redirect("/fruits");
