@@ -1,47 +1,54 @@
 <html>
-  <head>
-    <title>Fruits</title>
-    <meta charset="UTF-8" />
-  </head>
+    
+    <head>
+        <title>Fruits</title>
+        <meta charset="UTF-8" />
+    </head>
 
-  <style>
-    table, th, td {
-      border: 1px solid black;
-    }
-    .app {
-        padding: 5;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-  </style>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        .app {
+            padding: 5;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .footer {
+            bottom: 0;
+            position: absolute;
+        }
+    </style>
 
-  <body>
-    <div class="app">
-      <table>
-        <tr>
-          <th>Fruit List</th>
-        </tr>
-        <% fruits.forEach(fruit => { %>
-        <tr>
-          <td>
-            <a href="/fruits/fruit/<%= fruit._id%>">
-              <%= fruit.type %> - <%= fruit.kind %></a
-            >
-          </td>
-        </tr>
-        <% }); %>
-      </table>
-      <form action="<%= creation_url%>" method="post">
-        <label for="fruit type">Fruit Type:</label><br />
-        <input type="text" id="fruit type" name="type" /><br />
-        <label for="fruit kind">Fruit Kind:</label><br />
-        <input type="text" id="fruit kind" name="kind" /><br />
-        <label for="fruit origin">Fruit Origin:</label><br />
-        <input type="text" id="fruit origin" name="origin" /><br />
-        <input type="submit" value="Create Fruit" />
-      </form>
-    </div>
-  </body>
+    <body>
+        <div class="app">
+        <table>
+            <tr>
+            <th>Fruit List</th>
+            </tr>
+            <% fruits.forEach(fruit => { %>
+            <tr>
+            <td>
+                <a href="/fruits/fruit/<%= fruit._id%>">
+                <%= fruit.type %> - <%= fruit.kind %></a
+                >
+            </td>
+            </tr>
+            <% }); %>
+        </table>
+        <form action="<%= creation_url%>" method="post">
+            <label for="fruit type">Fruit Type:</label><br />
+            <input type="text" id="fruit type" name="type" /><br />
+            <label for="fruit kind">Fruit Kind:</label><br />
+            <input type="text" id="fruit kind" name="kind" /><br />
+            <label for="fruit origin">Fruit Origin:</label><br />
+            <input type="text" id="fruit origin" name="origin" /><br />
+            <input type="submit" value="Create Fruit" />
+        </form>
+        </div>
+        <%- include('./footer.ejs'); %>
+    </body>
+    
 </html>

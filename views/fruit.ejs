@@ -7,12 +7,16 @@
 
     <style>
         .app {
-        border: 1px solid black; 
-        padding: 5;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+            border: 1px solid black; 
+            padding: 5;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .footer {
+            bottom: 0;
+            position: absolute;
         }
     </style>
 
@@ -26,6 +30,7 @@
                 <button type="submit">Go Back</button>
             </form>
         </div>
+        <%- include('./footer.ejs'); %>
     </body>
 
 </html>
