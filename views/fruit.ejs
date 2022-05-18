@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
     </head>
 
+    <!-- CSS Styling -->
     <style>
         .app {
             border: 1px solid black; 
@@ -21,6 +22,7 @@
     </style>
 
     <body>
+        <!-- Display Fruit Info -->
         <div class="app">
             <p>Fruit Creation Date &emsp;:&emsp;<%= fruit.creationDate %></p>
             <p>Fruit Type &emsp;:&emsp;<%= fruit.type %></p>
@@ -30,7 +32,8 @@
                 <button type="submit">Go Back</button>
             </form>
         </div>
+
+        <!-- Including footer -->
         <%- include('./footer.ejs'); %>
     </body>
-
 </html>

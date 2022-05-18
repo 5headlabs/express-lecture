@@ -1,5 +1,6 @@
 const Fruit = require("../models/fruitModel");
 
+// List all fruits
 exports.listFruits = (req, res) => {
     Fruit.find((err, result) => {
         res.render('fruits', {

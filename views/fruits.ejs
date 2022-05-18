@@ -5,6 +5,7 @@
         <meta charset="UTF-8" />
     </head>
 
+    <!-- CSS Styling -->
     <style>
         table, th, td {
             border: 1px solid black;
@@ -24,30 +25,34 @@
 
     <body>
         <div class="app">
-        <table>
-            <tr>
-            <th>Fruit List</th>
-            </tr>
-            <% fruits.forEach(fruit => { %>
-            <tr>
-            <td>
-                <a href="/fruits/fruit/<%= fruit._id%>">
-                <%= fruit.type %> - <%= fruit.kind %></a
-                >
-            </td>
-            </tr>
-            <% }); %>
-        </table>
-        <form action="<%= creation_url%>" method="post">
-            <label for="fruit type">Fruit Type:</label><br />
-            <input type="text" id="fruit type" name="type" /><br />
-            <label for="fruit kind">Fruit Kind:</label><br />
-            <input type="text" id="fruit kind" name="kind" /><br />
-            <label for="fruit origin">Fruit Origin:</label><br />
-            <input type="text" id="fruit origin" name="origin" /><br />
-            <input type="submit" value="Create Fruit" />
-        </form>
+            <!-- List all fruits in a HTML table -->
+            <table>
+                <tr>
+                <th>Fruit List</th>
+                </tr>
+                <% fruits.forEach(fruit => { %>
+                <tr>
+                <td>
+                    <a href="/fruits/fruit/<%= fruit._id%>">
+                    <%= fruit.type %> - <%= fruit.kind %></a
+                    >
+                </td>
+                </tr>
+                <% }); %>
+            </table>
+            <!-- Creation form to create no fruit -->
+            <form action="<%= creation_url%>" method="post">
+                <label for="fruit type">Fruit Type:</label><br />
+                <input type="text" id="fruit type" name="type" /><br />
+                <label for="fruit kind">Fruit Kind:</label><br />
+                <input type="text" id="fruit kind" name="kind" /><br />
+                <label for="fruit origin">Fruit Origin:</label><br />
+                <input type="text" id="fruit origin" name="origin" /><br />
+                <input type="submit" value="Create Fruit" />
+            </form>
         </div>
+
+        <!-- Include footer -->
         <%- include('./footer.ejs'); %>
     </body>
     
